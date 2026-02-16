@@ -57,13 +57,12 @@ static inline void tcp_bypass_init(struct sock *sk) {
 	tp->nonagle = 1;
 	tp->thin_lto = 0;
 	tp->frto = 0;
-	tp->snd_ssthresh = 0;
+	tp->snd_ssthresh = 4294967295;
 	tp->snd_cwnd = 4294967295;
-	tp->snd_cwnd_cnt = 0;
 	tp->snd_cwnd_clamp = 4294967295;
 	tp->reordering = 0;
 	tp->prior_cwnd = 4294967295;
-	tp->prior_ssthresh = 0;
+	tp->prior_ssthresh = 4294967295;
 }
 
 static inline void tcp_bypass_release(struct sock *sk) {
